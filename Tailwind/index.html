@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles1.css"> <!-- Link til din kompilerede SCSS-fil -->
+</head>
+<body>
+
+    <!-- Logo sektion -->
+    <div class="logo">
+        <img src="Images/logo1.png" alt="Logo">
+    </div>
+
+    <!-- Hero Sektion -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h1>Velkommen til min portfolio</h1>
+                <p>Jeg hedder Louise, og jeg er uddannet multimediedesigner. <br>
+                     Lige nu læser jeg webudvikling, fordi jeg godt kan lide at arbejde med design og teknologi.<br> <br>
+
+                     Jeg synes selv jeg er kreativ og har gennem tiden lavet mange forskellige projekter,
+                     <br> inden for digitalt design og kode (både frontend og backend).
+                    <br>  <br> At skabe og udvikle nye idéer er noget af det, jeg brænder allermest for,
+                    <br> og jeg elsker at fordybe mig i kreative processer. <br>  <br>
+                     Uanset om det er et digitalt projekt eller noget fysisk, <br>
+                     går jeg altid op i detaljerne og elsker at se mine idéer blive til virkelighed.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="Images/portræt2.png" alt="Portrait">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projekter Sektion -->
+    <section class="projects">
+        <h2>Projekter</h2>
+        <div class="slider">
+            <div class="slide">
+                <img src="Images/cat1.png" alt="Projekt 1">
+                <div class="slide-text">
+                    <h3>Kattesimulator</h3>
+                    <p>Dette er en Kattesimulator, hvor man har ansvaret for en virtuel kat. <br>
+                         Man skal løbende holde øje med kattens behov <br>
+                         og sørge for at fodre og pleje den. <br> <br>
+                         Hvis man ikke giver den nok opmærksomhed,
+                       <br> vil katten i sidste ende dø, og man skal starte forfra.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="Images/lse.jpg" alt="Projekt 2">
+                <div class="slide-text">
+                    <h3>L.S.E Accessories</h3>
+                    <p>Dette er min webshop, jeg har lavet med shopify. <br><br> Her sælger jeg mine håndlavede smykker, skabt med kærlighed og sans for detaljer. <br>
+                         Hvert smykke er unikt, farverigt og designet til at skille sig ud. <br><br>
+                          Jeg elsker at eksperimentere med former, materialer og nuancer for at skabe noget særligt. <br><br>
+                        Jeg sender pakker til hele eu, og vil af og til også dele giveaways på min instagram. <br></p>
+                        <a href="https://lseaccessories.com/" target="_blank">Klik her for at se mere!</a>
+                    </p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="Images/lemonade.png" alt="Projekt 3">
+                <div class="slide-text">
+                    <h3>Lemonade Stand</h3>
+                    <p>Dette er et lille projekt om at drive en lemonadebod, <br>
+                        hvor man kan tilføje sin indtjening og trække udgifter fra, <br> alt efter hvor meget man sælger, eller bruger på citroner. <br>
+                        <br> Lidt ligesom en lille lommeregner.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="Images/pod1.png" alt="Projekt 4">
+                <div class="slide-text">
+                    <h3>Podcast</h3>
+                    <p>Dette var mit (og min makkers) afsluttende eksamensprojekt på multimedie uddannelsen. <br>
+                        Vi designede, planlagde, indspillede og klippede vores helt eget podcast afsnit, der omhandlede film og tv. <br>
+                        <br> Det var en lang men også lærerig proces, der førte os vidt omkring.</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <button id="prevProjectBtn">&lt;</button>
+            <button id="nextProjectBtn">&gt;</button>
+        </div>
+    </section>
+
+    <!-- Kontakt Sektion -->
+    <section class="contact">
+        <h2>Følg mig</h2>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/louise-erichsen-7278b324a/" target="_blank">
+                <img src="Images/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/louise.erichsen/" target="_blank">
+                <img src="Images/instagram.png" alt="Instagram">
+            </a>
+        </div>
+    </section>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        const totalSlides = slides.length;
+
+        document.getElementById("nextProjectBtn").addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % totalSlides; // Loop back to first slide when at the last
+            updateSlider();
+        });
+
+        document.getElementById("prevProjectBtn").addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Loop to the last slide when at the first
+            updateSlider();
+        });
+
+        function updateSlider() {
+            // Skift mellem projekterne
+            slides.forEach((slide, index) => {
+                if (index === currentIndex) {
+                    slide.style.display = "flex"; // Vis det aktuelle projekt
+                } else {
+                    slide.style.display = "none"; // Skjul de øvrige projekter
+                }
+            });
+        }
+
+        // Initialize the first slide to be visible on page load
+        updateSlider();
+    </script>
+
+</body>
+</html>

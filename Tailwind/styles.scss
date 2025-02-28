@@ -1,0 +1,156 @@
+
+$primary-color: #ff78a8;   
+$secondary-color: #f9f7f3; 
+$tertiary-color: #ff8300;   
+$button-hover-color: #ff6f00; 
+$button-color: #333;        
+$text-color: #000000;      
+$white-color: #fff;         
+
+
+
+body {
+  background-color: $secondary-color;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+
+.logo {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  background-color: $secondary-color;
+
+  img {
+    max-width: 200px;
+  }
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+  padding: 20px;
+
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  h1 {
+    font-size: 50px;
+    color: $text-color;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 20px;
+    color: $text-color;
+    margin-top: 1rem;
+  }
+}
+
+// Projekter sektion
+.projects {
+  padding: 30px 0;
+  background-color: $secondary-color;
+  text-align: center;
+
+  h2 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 1px;
+  }
+
+  .slider {
+    margin-top: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    padding: 20px;
+    text-align: center;
+    display: none; /* Skjuler alle slides som standard */
+    align-items: center; /* Sørger for at indholdet er centreret */
+    justify-content: center;
+    flex-direction: column; /* Billede og tekst vises i en kolonne */
+
+    img {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 80%; /* Justerer størrelsen på billedet */
+      margin-bottom: 20px; /* Lidt afstand mellem billede og tekst */
+    }
+
+    .slide-text {
+      text-align: center; /* Centrerer teksten */
+
+      h3 {
+        margin-top: 10px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px; /* Tilføjer lidt afstand mellem pilene */
+
+    button {
+      background-color: $tertiary-color;
+      color: $white-color;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.5rem;
+
+      &:hover {
+        background-color: $button-hover-color;
+      }
+    }
+  }
+}
+
+
+.contact {
+  padding: 50px 0;
+  background-color: $tertiary-color;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    color: $white-color;
+    font-weight: bold;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+
+    a {
+      img {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+}
